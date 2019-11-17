@@ -6,14 +6,12 @@ const moment = require('moment');
 const jimp = require('jimp');
 const Canvas = require('canvas');
 const data = {}
-
-const prefix = '*';
 var dat = JSON.parse("{}");
-function forEachObject(obj, func) {
-    Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
-}
+
+
+
 client.on('guildMemberAdd', member => {
-let channel = member.guild.channels.get("637671669078425611");
+let channel = member.guild.channels.get("644582184858025984");
 if (member.user.bot) return;
 var Canvas = require('canvas')
 var jimp = require('jimp')
@@ -55,7 +53,7 @@ const w = ['./welcome.png'];
                                     ctx.font = '30px Arial Bold';
                               ctx.fontSize = '20px';
                               ctx.fillStyle = "#FFFFFF";
-                                ctx.fillText(member.user.username, 277, 138);
+                                ctx.fillText(member.user.username, 265, 162);
 
                                                      var guild;
     while (!guild)
@@ -84,7 +82,7 @@ const w = ['./welcome.png'];
                               let ava = new Avatar;
                               ava.src = buf;
                               ctx.beginPath();
-                 ctx.arc(120.8, 120.5, 112.3, 0, Math.PI*2, true);
+                 ctx.arc(132.4, 117.7, 92.7, 0, Math.PI*2, true);
                    ctx.closePath();
 
                                  ctx.clip();
@@ -96,4 +94,4 @@ const w = ['./welcome.png'];
 })
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login("TOKEN");
