@@ -1,17 +1,27 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const bot = new Discord.Client();
+const { Client, RichEmbed } = require("discord.js");
+var { Util } = require('discord.js');
+const { exec } = require('child_process');
+const canvas = require("canvas");
+const Canvas = require("canvas");
 const fs = require('fs');
-const moment = require('moment');
-const jimp = require('jimp');
-const Canvas = require('canvas');
-const data = {}
-var dat = JSON.parse("{}");
+const util = require("util")
+const ms = require("ms");
+const jimp = require("jimp");
+const guild = require('guild');
+const dateFormat = require('dateformat');
+const {TOKEN, YT_API_KEY, prefix, devs} = require('./config')
+var table = require('table').table
+const Discord = require('discord.js');
+const fetch = require('node-fetch');
+const client = new Discord.Client();
+client.login(TOKEN);
+const me = client;
+const bot = client
 
 
 
 client.on('guildMemberAdd', member => {
-let channel = member.guild.channels.get("644582184858025984");
+let channel = member.guild.channels.get("646121774655864842");
 if (member.user.bot) return;
 var Canvas = require('canvas')
 var jimp = require('jimp')
@@ -32,7 +42,7 @@ hours = 12;
 }
 const w = ['./file.png'];
              let Image = Canvas.Image,
-                  canvas = new Canvas(557, 241),
+                canvas = Canvas.createCanvas(500, 260),
                   ctx = canvas.getContext('2d');
               fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
                   if (err) return console.log(err)
@@ -60,24 +70,10 @@ const w = ['./file.png'];
                         guild = member.guild
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            if (dat[Inv])
-                if (dat[Inv] < Invite.uses) {
-                    console.log(`${member} joined over ${Invite.inviter}'s invite ${Invite.code}`)
-                        member.guild.fetchInvites().then(invs => {
-      let user = Invite.inviter;
-      let invites = invs.filter(i => i.inviter.id === user.id);
-      let inviteCount = invites.reduce((p, v) => v.uses + p, 0);
-
- channel.send(`**Invited By** : **${Invite.inviter}**`);
 
 })
-}
-            dat[Inv] = Invite.uses;
 })
-})
-
-                              //AVATARً
+                              //AVATAR?
                               let Avatar = Canvas.Image;
                               let ava = new Avatar;
                               ava.src = buf;
@@ -94,4 +90,8 @@ const w = ['./file.png'];
 })
 });
 
-client.login("TOKEN");
+
+
+
+
+
